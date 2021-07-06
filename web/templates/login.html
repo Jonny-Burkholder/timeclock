@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <title>Login</title>
+    <script src="../static/js/login.js"></script>
+</head>
+<body>
+    <h1>Enter Pin</h1>
+    <label for="pin"></label>
+    <form id="pin" name="pin" action="submit-pin" method="POST">
+        <!--Ideally, this would be hidden, and we would use jquery to poll the form
+        and display the updated value in a <p> tag or an <h> tag-->
+        <input type="number" name="pin_field" id="pin_field">
+        <input type="submit" value="log in">
+    </form>
+    <div id="pin_pad_div">
+        <table name="pin_pad" id="pin_pad">
+            <tr>
+                <td>
+                    <button id="1" onclick="add_number(1)">1</button>
+                </td>
+                <td>
+                    <button id="2" onclick="add_number(2)">2</button>
+                </td>
+                <td>
+                    <button id="3" onclick="add_number(3)">3</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="4" onclick="add_number(4)">4</button>
+                </td>
+                <td>
+                    <button id="5" onclick="add_number(5)">5</button>
+                </td>
+                <td>
+                    <button id="6" onclick="add_number(6)">6</button>
+                </td>
+            </tr>            <tr>
+                <td>
+                    <button id="7" onclick="add_number(7)">7</button>
+                </td>
+                <td>
+                    <button id="8" onclick="add_number(8)">8</button>
+                </td>
+                <td>
+                    <button id="9" onclick="add_number(9)">9</button>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button id="0" onclick="add_number(0)">0</button></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</body>
