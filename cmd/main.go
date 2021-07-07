@@ -64,7 +64,6 @@ func handleLogin(w http.ResponseWriter, r *http.Request) {
 func handleSubmitPin(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	user, err := userMap.CheckPin(r.FormValue("pin_field"))
-	fmt.Println(r.FormValue("pin_field"))
 	if err != nil {
 		fmt.Println(err)
 		http.Redirect(w, r, "login", http.StatusFound)
@@ -99,7 +98,7 @@ func handleClockIn(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	user.StartShift()
-	http.Redirect(w, r, "login", http.StatusFound)
+	http.Redirect(w, r, "/login", http.StatusFound)
 }
 
 func handleClockOut(w http.ResponseWriter, r *http.Request) {
@@ -110,5 +109,5 @@ func handleClockOut(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	user.EndShift()
-	http.Redirect(w, r, "shift-report/"+user.Username, http.StatusFound)
+	http.Redirect(w, r, "/shift-report/"+user.Username, http.StatusFound)
 }

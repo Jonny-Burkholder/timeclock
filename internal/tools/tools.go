@@ -155,19 +155,25 @@ func (u *userMap) CheckPin(pin string) (*User, error) {
 
 func (u *User) StartShift() {
 	u.Shift.Start = time.Now()
-	u.Shift.End = time.Time{}
+	fmt.Println(u.Shift.Start)
+	u.Save()
 }
 
 func (u *User) EndShift() {
 	u.Shift.End = time.Now()
+	fmt.Println(u.Shift.End)
 	u.Shift.ShiftLength = u.Shift.End.Sub(u.Shift.Start)
+	fmt.Println(u.Shift.ShiftLength)
+	u.Save()
 }
 
 func DisplayTime(time time.Time) string {
+	fmt.Println(time)
 	a, b, c := time.Clock()
 	return strconv.Itoa(a) + ":" + strconv.Itoa(b) + ":" + strconv.Itoa(c)
 }
 
 func DisplayShift(d time.Duration) string {
+	fmt.Println(d)
 	return strconv.Itoa(int(d.Hours())) + ":" + strconv.Itoa(int(d.Minutes())) + ":" + strconv.Itoa(int(d.Seconds()))
 }
