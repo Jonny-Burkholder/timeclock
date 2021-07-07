@@ -4,18 +4,12 @@
 </head>
 <body>
     <h1>You made it!</h1>
-    <div id="clock">
-        <p>Time clocked in:</p>
-        <p>{{DisplayTime .Clock.In}}</p>
-        <p>Time clocked out:</p>
-        <p>{{DisplayTime .Clock.Out}}</p>
-        <p>Shift Length:</p>
-        <p>{{DisplayShift .Clock.Length}}</p>
-    </div>
     <label for ="clock_in">Clock In</label>
-    <form id="clock_in" id="clock_in" action="clock-in/{{.userID}}" method="POST"></form>
+    <form id="clock_in" id="clock_in" action="/clock-in/{{.Username}}" method="POST">
+        <input type="submit" value="clock in">
+    </form>
     <label for="clock_out">Clock Out</label>
-    <form id="clock_out" name="clock_out" action="log-out/{{.userID}}" method="POST">
+    <form id="clock_out" name="clock_out" action="/clock-out/{{.Username}}" method="POST">
         <input type="submit" value="clock out">
     </form>
 </body>

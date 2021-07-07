@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<head>
+    <title>Shift Report</title>
+</head>
+<body>
+    <h1>Shift report for {{.Username}}</h1>
+    <p>Time Clocked in:</p>
+    <p>{{DisplayTime .Shift.Start}}</p>
+    <p>Time Clocked Out:</p>
+    <p>{{DisplayTime .Shift.End}}</p>
+    <p>Shift Length:</p>
+    <p>{{DisplayShift .Shift.ShiftLength}}</p>
+</body>
